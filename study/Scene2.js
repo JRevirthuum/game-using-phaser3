@@ -65,6 +65,9 @@ class Scene2 extends Phaser.Scene {
     this.physics.add.collider(this.projectiles, this.powerUps, function(projectiles, powerUp) {
       projectiles.destroy();
     });
+
+    // 플레이어와 파워오브젝트 충돌 시, 콜백 pickPowerUp , 함수 적용범위
+    this.physics.add.overlap(this.player, this.powerUps, this.pickPowerUp, null, this);
   }
 
   // 움직이기
@@ -127,4 +130,11 @@ class Scene2 extends Phaser.Scene {
   shootBeam() {
     var beam = new Beam(this);
   }
+
+  // 충돌 대상 player, powerUp
+  pickPowerUp(player, powerUp) {
+    // 충돌 하면, 파워업 오브젝트는 화면에서 사라짐
+    powerUp.disableBody(true, true);
+  }
+
 }
