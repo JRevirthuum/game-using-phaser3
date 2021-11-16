@@ -72,6 +72,18 @@ class Scene2 extends Phaser.Scene {
     //총알과 적 비행물체 충돌시
     this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
 
+
+    var graphics = this.add.graphics();
+    graphics.fillStyle(0x000000, 1);
+    graphics.beginPath();
+    graphics.moveTo(0, 0);
+    graphics.lineTo(config.width, 0);
+    graphics.lineTo(config.height, 20);
+    graphics.lineTo(0, 20);
+    graphics.lineTo(0, 0);
+    graphics.closePath();
+    graphics.fillPath();
+
     // 점수 기본 값 삽입
     this.score = 0;
 
