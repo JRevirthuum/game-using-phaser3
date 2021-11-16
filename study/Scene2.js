@@ -89,7 +89,27 @@ class Scene2 extends Phaser.Scene {
 
     // bitmapText 를 이용한 폰트 생성
     this.scoreLabel = this.add.bitmapText(10, 5, 'pixelFont', 'SCORE ', 16);
+
+    // 사운드로드
+    this.beamSound = this.sound.add('audio_beam');
+    this.explosionSound = this.sound.add('audio_explosion');
+    this.pickupSound = this.sound.add('audio_pickup');
+
+    //브금 깔기
+    this.music = this.sound.add('music');
+
+    var musicConfig = {
+      mute: false,
+      volume: 1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: false,
+      delay: 0
+    }
+    this.music.play(musicConfig);
   }
+
 
   // 움직이기
   moveShip(ship, speed) {
@@ -152,12 +172,14 @@ class Scene2 extends Phaser.Scene {
 
   shootBeam() {
     var beam = new Beam(this);
+    this.beamSound.play();
   }
 
   // 충돌 대상 player, powerUp
   pickPowerUp(player, powerUp) {
     // 충돌 하면, 파워업 오브젝트는 화면에서 사라짐
     powerUp.disableBody(true, true);
+    this.pickupSound.play();
   }
 
   // 충돌 대상 player, enemies
@@ -179,6 +201,7 @@ class Scene2 extends Phaser.Scene {
 
   hitEnemy(projectile, enemy) {
     var explosion = new Explosion(this, enemy.x, enemy.y);
+    this.explosionSound.play();
 
     projectile.destroy();
     this.resetShipPos(enemy);
