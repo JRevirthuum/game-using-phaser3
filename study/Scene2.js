@@ -75,6 +75,9 @@ class Scene2 extends Phaser.Scene {
 
     // 플레이어와 파워오브젝트 충돌 시, 콜백 pickPowerUp , 함수 적용범위
     this.physics.add.overlap(this.player, this.powerUps, this.pickPowerUp, null, this);
+
+    // 플레이어와 적 비행물체 충돌시
+    this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
   }
 
   // 움직이기
@@ -144,4 +147,10 @@ class Scene2 extends Phaser.Scene {
     powerUp.disableBody(true, true);
   }
 
+  // 충돌 대상 player, enemies
+  hurtPlayer(player, enemies) {
+    this.resetShipPos(enemies);
+    player.x = config.width / 2 - 8;
+    player.y = config.height - 64;
+  }
 }
