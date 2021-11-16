@@ -61,6 +61,8 @@ class Scene2 extends Phaser.Scene {
       powerUp.setBounce(1);
     }
 
+    // 충돌하는 대상 추가 : beam과 power-up object
+    this.physics.add.collider(this.projectiles, this.powerUps);
   }
 
   // 움직이기
