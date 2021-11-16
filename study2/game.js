@@ -1,3 +1,5 @@
+var platforms;
+
 var config = {
     type: Phaser.AUTO, // WebGL 지원하면 WebGL, 지원하지 않으면 Canvas
     width: 800,
