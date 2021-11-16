@@ -45,6 +45,9 @@ class Scene1 extends Phaser.Scene
       frameWidth: 16,
       frameHeight: 16, 
     });
+
+    // 비트맵 폰트 로드
+    this.load.bitmapFont('pixelFont', 'assets/font/font.png', 'assets/font/font.xml');
   }
 
   create()
