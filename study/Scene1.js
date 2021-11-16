@@ -7,53 +7,53 @@ class Scene1 extends Phaser.Scene
 
   preload()
   {
-    this.load.image('background', 'assets/images/background.png');
-    //this.load.image('ship', 'assets/images/ship.png');
-    this.load.spritesheet('ship', 'assets/spritesheets/ship.png', {
+    this.load.image('background', '../assets/images/background.png');
+    //this.load.image('ship', '../assets/images/ship.png');
+    this.load.spritesheet('ship', '../assets/spritesheets/ship.png', {
       frameWidth: 16,
       frameHeight: 16
     });
-    //this.load.image('ship2', 'assets/images/ship2.png');
-    this.load.spritesheet('ship2', 'assets/spritesheets/ship2.png', {
+    //this.load.image('ship2', '../assets/images/ship2.png');
+    this.load.spritesheet('ship2', '../assets/spritesheets/ship2.png', {
       frameWidth: 32,
       frameHeight: 16,
     });
-    //this.load.image('ship3', 'assets/images/ship3.png');
-    this.load.spritesheet('ship3', 'assets/spritesheets/ship3.png', {
+    //this.load.image('ship3', '../assets/images/ship3.png');
+    this.load.spritesheet('ship3', '../assets/spritesheets/ship3.png', {
       frameWidth: 32,
       frameHeight: 32,
     });
 
-    this.load.spritesheet('explosion', 'assets/spritesheets/explosion.png', {
+    this.load.spritesheet('explosion', '../assets/spritesheets/explosion.png', {
       frameWidth: 16,
       frameHeight: 16,
     });
 
-    this.load.spritesheet('power-up', 'assets/spritesheets/power-up.png', {
+    this.load.spritesheet('power-up', '../assets/spritesheets/power-up.png', {
       frameWidth: 16,
       frameHeight: 16,
     });
 
     // 플레이어.
-    this.load.spritesheet('player', 'assets/spritesheets/player.png', {
+    this.load.spritesheet('player', '../assets/spritesheets/player.png', {
       frameWidth: 16,
       frameHeight: 24,
     });
 
     // 총알
-    this.load.spritesheet('beam', 'assets/spritesheets/beam.png', {
+    this.load.spritesheet('beam', '../assets/spritesheets/beam.png', {
       frameWidth: 16,
       frameHeight: 16, 
     });
 
     // 비트맵 폰트 로드
-    this.load.bitmapFont('pixelFont', 'assets/font/font.png', 'assets/font/font.xml');
+    this.load.bitmapFont('pixelFont', '../assets/font/font.png', '../assets/font/font.xml');
 
     // 빔 사운드 다운로드
-    this.load.audio('audio_beam', ['assets/sounds/beam.ogg', 'assets/sounds/beam.mp3']);
-    this.load.audio('audio_explosion', ['assets/sounds/explosion.ogg', 'assets/sounds/explosion.mp3']);
-    this.load.audio('audio_pickup', ['assets/sounds/pickup.ogg', 'assets/sounds/pickup.mp3']);
-    this.load.audio('music', ['assets/sounds/sci-fi_platformer12.ogg', 'assets/sounds/sci-fi_platformer12.mp3']);
+    this.load.audio('audio_beam', ['../assets/sounds/beam.ogg', '../assets/sounds/beam.mp3']);
+    this.load.audio('audio_explosion', ['../assets/sounds/explosion.ogg', '../assets/sounds/explosion.mp3']);
+    this.load.audio('audio_pickup', ['../assets/sounds/pickup.ogg', '../assets/sounds/pickup.mp3']);
+    this.load.audio('music', ['../assets/sounds/sci-fi_platformer12.ogg', '../assets/sounds/sci-fi_platformer12.mp3']);
   }
 
   create()
