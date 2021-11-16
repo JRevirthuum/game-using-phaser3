@@ -71,6 +71,12 @@ class Scene2 extends Phaser.Scene {
 
     //총알과 적 비행물체 충돌시
     this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
+
+    // 점수 기본 값 삽입
+    this.score = 0;
+
+    // bitmapText 를 이용한 폰트 생성
+    this.scoreLabel = this.add.bitmapText(10, 5, 'pixelFont', 'SCORE ', 16);
   }
 
   // 움직이기
@@ -150,5 +156,7 @@ class Scene2 extends Phaser.Scene {
   hitEnemy(projectile, enemy) {
     projectile.destroy();
     this.resetShipPos(enemy);
+    this.score += 15;
+    this.scoreLabel.text = 'SCORE ' + this.score;
   }
 }
