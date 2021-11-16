@@ -23,6 +23,7 @@ class Init extends Phaser.Scene
     create ()
     {
       this.add.image(400,300, 'sky');
+      // 땅을 생성
       platforms = this.physics.add.staticGroup();
       platforms.create(400, 568, 'ground').setScale(2).refreshBody();
       
@@ -30,6 +31,18 @@ class Init extends Phaser.Scene
       platforms.create(50, 250, 'ground');
       platforms.create(750, 220, 'ground');
 
-      this.add.image(400,300, 'star');
+
+      // 유저 생성
+      player = this.physics.add.sprite(100, 450, 'dude');
+      player.setBounce(0.2);
+      player.setCollideWorldBounds(true);
+
+      // 유저 중력 가속
+      player.body.setGravityY(300);
+
+      // 플랫폼 위에 착지
+      this.physics.add.collider(player, platforms);
+
+      //this.add.image(400,300, 'star');
     }
 }

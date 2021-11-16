@@ -1,3 +1,4 @@
+var player;
 var platforms;
 
 var config = {
