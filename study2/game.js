@@ -3,7 +3,14 @@ var config = {
     width: 800,
     height: 600,
     backgroundColor: '#2d2d2d',
-    scene: [ Init ]
+    scene: [ Init ],
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 3000 },
+            debug: false,
+        }
+    }
 };
 
 var game = new Phaser.Game(config);
