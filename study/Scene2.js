@@ -11,14 +11,6 @@ class Scene2 extends Phaser.Scene {
     // this.ship1 = this.add.image(config.width/2 - 50, config.height/2, 'ship');
     // this.ship2 = this.add.image(config.width/2, config.height/2, 'ship2');
     // this.ship3 = this.add.image(config.width/2 + 50, config.height/2, 'ship3');
-
-    // 스케일 업
-    //this.ship1.setScale(2);
-    // Y 방향 뒤집기 true
-    //this.ship1.flipY = true;
-    // 회전?
-    //this.ship1.angle += 3;
-
     this.ship1 = this.add.sprite(config.width/2 - 50, config.height/2, 'ship');
     this.ship2 = this.add.sprite(config.width/2, config.height/2, 'ship2');
     this.ship3 = this.add.sprite(config.width/2 + 50, config.height/2, 'ship3');
@@ -46,8 +38,6 @@ class Scene2 extends Phaser.Scene {
     this.ship3.setInteractive();
 
     this.input.on('gameobjectdown', this.destroyShip, this);
-
-    this.add.text(20, 20, 'playing game', {font: '25px Arial', fill: 'yellow'});
 
     this.powerUps = this.physics.add.group();
 
