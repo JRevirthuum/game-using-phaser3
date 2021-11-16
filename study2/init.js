@@ -9,7 +9,7 @@ class Init extends Phaser.Scene
     preload ()
     {
       // phaser labs url
-      this.load.setBaseURL("https://labs.phaser.io/");
+      this.load.setBaseURL("https://labs.phaser.io/src/games/firstgame/");
       this.load.image('sky', 'assets/sky.png');
       this.load.image('ground', 'assets/platform.png');
       this.load.image('star', 'assets/star.png');
@@ -19,8 +19,9 @@ class Init extends Phaser.Scene
       });
     }
 
+    // 오브젝트 생성
     create ()
     {
-
+      this.add.image(400,300, 'sky');
     }
 }
