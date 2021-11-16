@@ -1,6 +1,8 @@
 Phaser3 를 이용하여 게임 만들기
 ===============================
 
+![image](https://user-images.githubusercontent.com/12654199/141881636-408f82e2-bf1d-4c79-8ccc-66c6e8b01428.png)
+
 사용 프레임워크 : [Phaser 3](phaser.io)
 
 예전부터 꼭 한번 싶었던 프레임워크인 Phaser를 익혀보았다.
@@ -10,3 +12,5 @@ Phaser3 를 이용하여 게임 만들기
 이 소스는 Luis Zuno 의 유튜브 채널에서 [Phaser Tutorials](https://www.youtube.com/watch?v=frRWKxB9Hm0&list=PLDyH9Tk5ZdFzEu_izyqgPFtHJJXkc79no)재생목록을 보고 한땀한땀 따라 만들어본 소스이다.
 
 Luis Zuno 깃허브 : [ansimuz/getting-started-with-phaser](https://github.com/ansimuz/getting-started-with-phaser)
+
+
