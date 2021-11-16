@@ -78,6 +78,9 @@ class Scene2 extends Phaser.Scene {
 
     // 플레이어와 적 비행물체 충돌시
     this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
+
+    //총알과 적 비행물체 충돌시
+    this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
   }
 
   // 움직이기
@@ -148,9 +151,14 @@ class Scene2 extends Phaser.Scene {
   }
 
   // 충돌 대상 player, enemies
-  hurtPlayer(player, enemies) {
-    this.resetShipPos(enemies);
+  hurtPlayer(player, enemy) {
+    this.resetShipPos(enemy);
     player.x = config.width / 2 - 8;
     player.y = config.height - 64;
+  }
+
+  hitEnemy(projectile, enemy) {
+    projectile.destroy();
+    this.resetShipPos(enemy);
   }
 }
