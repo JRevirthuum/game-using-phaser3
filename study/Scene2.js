@@ -11,9 +11,9 @@ class Scene2 extends Phaser.Scene {
     // this.ship1 = this.add.image(config.width/2 - 50, config.height/2, 'ship');
     // this.ship2 = this.add.image(config.width/2, config.height/2, 'ship2');
     // this.ship3 = this.add.image(config.width/2 + 50, config.height/2, 'ship3');
-    this.ship1 = this.add.sprite(config.width/2 - 50, config.height/2, 'ship');
-    this.ship2 = this.add.sprite(config.width/2, config.height/2, 'ship2');
-    this.ship3 = this.add.sprite(config.width/2 + 50, config.height/2, 'ship3');
+    this.ship1 = this.add.sprite(config.width/2 - 50, config.height/2 - 40, 'ship');
+    this.ship2 = this.add.sprite(config.width/2, config.height/2 - 40, 'ship2');
+    this.ship3 = this.add.sprite(config.width/2 + 50, config.height/2 - 40, 'ship3');
 
     // 적 비행물체에 physic가 먹히도록 그룹화
     this.enemies = this.physics.add.group();
@@ -121,7 +121,9 @@ class Scene2 extends Phaser.Scene {
     this.movePlayerManager();
     if(Phaser.Input.Keyboard.JustDown(this.spacebar)) {
       //console.log('Fire!!');
-      this.shootBeam();
+      if(this.player.active) {
+        this.shootBeam();
+      }
     }
 
     for(var i = 0; i < this.projectiles.getChildren().length; i++) {
@@ -161,11 +163,14 @@ class Scene2 extends Phaser.Scene {
   // 충돌 대상 player, enemies
   hurtPlayer(player, enemy) {
     this.resetShipPos(enemy);
-    player.x = config.width / 2 - 8;
-    player.y = config.height - 64;
+    var explosion = new Explosion(this, player.x, player.y);
+    player.disableBody(true, true);
+    this.resetPlayer();
   }
 
   hitEnemy(projectile, enemy) {
+    var explosion = new Explosion(this, enemy.x, enemy.y);
+
     projectile.destroy();
     this.resetShipPos(enemy);
     this.score += 15;
@@ -179,5 +184,11 @@ class Scene2 extends Phaser.Scene {
       stringNumber = "0" + stringNumber;      
     }
     return stringNumber;
+  }
+
+  resetPlayer() {
+    var x = config.width / 2 - 8;
+    var y = config.height + 64;
+    this.player.enableBody(true, x, y, true, true);
   }
 }

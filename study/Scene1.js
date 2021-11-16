@@ -53,7 +53,6 @@ class Scene1 extends Phaser.Scene
   create()
   {
     this.add.text(20, 20, "Loading game...");
-    this.scene.start('playGame');
 
     this.anims.create({
       key: 'ship1_anim',
@@ -119,5 +118,8 @@ class Scene1 extends Phaser.Scene
       frameRate: 20,
       repeat: -1
     });
+
+    // 로딩 완료후 스테이지 시작
+    this.scene.start('playGame');
   }
 }
