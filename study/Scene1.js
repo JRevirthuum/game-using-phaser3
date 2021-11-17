@@ -49,11 +49,11 @@ class Scene1 extends Phaser.Scene
     // 비트맵 폰트 로드
     this.load.bitmapFont('pixelFont', '../assets/font/font.png', '../assets/font/font.xml');
 
-    // 빔 사운드 다운로드
-    this.load.audio('audio_beam', ['../assets/sounds/beam.ogg', '../assets/sounds/beam.mp3']);
-    this.load.audio('audio_explosion', ['../assets/sounds/explosion.ogg', '../assets/sounds/explosion.mp3']);
-    this.load.audio('audio_pickup', ['../assets/sounds/pickup.ogg', '../assets/sounds/pickup.mp3']);
-    this.load.audio('music', ['../assets/sounds/sci-fi_platformer12.ogg', '../assets/sounds/sci-fi_platformer12.mp3']);
+    // 빔, 폭발, 에너지, 브금 사운드 다운로드
+    // this.load.audio('audio_beam', ['../assets/sounds/beam.ogg', '../assets/sounds/beam.mp3']);
+    // this.load.audio('audio_explosion', ['../assets/sounds/explosion.ogg', '../assets/sounds/explosion.mp3']);
+    // this.load.audio('audio_pickup', ['../assets/sounds/pickup.ogg', '../assets/sounds/pickup.mp3']);
+    // this.load.audio('music', ['../assets/sounds/sci-fi_platformer12.ogg', '../assets/sounds/sci-fi_platformer12.mp3']);
   }
 
   create()
