@@ -2,8 +2,11 @@ Phaser3 를 이용하여 게임 만들기
 ===============================
 
 ![image](https://user-images.githubusercontent.com/12654199/141881636-408f82e2-bf1d-4c79-8ccc-66c6e8b01428.png)
+
 동작 보기 : 
+
 [Study 1:슈팅](https://jrevirthuum.github.io/game-using-phaser3/study/index.html)
+
 [Study 2:플랫포머](https://jrevirthuum.github.io/game-using-phaser3/study2/index.html)
 
 
